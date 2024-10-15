@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 4em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            text-align: center;
+            color: teal;
+            margin-top: 20px; /* Reduced space above the h1 */
+        }
+        h2 {
+            font-size: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            text-align: center;
+            color: rgb(112, 63, 139);
+            margin-top: 15px;
+        }
+        body {
+            background-color: rgb(205, 153, 153);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            margin-top: 20px;
+            width: 400px;
+            height: 300px; /* Adjust the size here */
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            background-color: teal;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkslategray;
+        }
+    </style>
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Yessss I tricked you!</h1>
+    <h2>Of course there isn't a <u>no option</u> </h2>
+    
+    <!-- Centering the GIF and making it bigger -->
+    <img src="200.webp" alt="Trick GIF">
+
+    <!-- Play button to start the audio -->
+    <button onclick="playAudio()">Play Music 🎶</button>
+    
+    <!-- Audio element -->
+    <audio id="audio" src="y2mate.com - Sherine  El Watar El Hassas  شيرين  الوتر الحساس.mp3" loop></audio>
+
+</body>
+</html>

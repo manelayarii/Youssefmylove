@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me?</title>
+    <style>
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(201, 57, 5);
+            font-weight: 500;
+            text-align: center;
+            font-size: 3em;
+            padding-top: 15px;
+        }
+        body {
+            background-image: url("18247639_v1013-p-0001a.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            margin: 0; /* Reset margin to avoid extra space */
+            height: 100vh; /* Full height for centering */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Arrange elements in a column */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+        .options {
+            display: flex; /* Use flexbox for options */
+            justify-content: space-between; /* Space between options */
+            width: 100%; /* Full width for options */
+            max-width: 600px; /* Limit max width */
+            margin-top: 20px; /* Space above options */
+        }
+        label {
+            font-size: 2em;
+            color: rgb(201, 57, 5);
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: coral;
+            color: rgb(201, 57, 5);
+            border: none;
+            cursor: pointer;
+            margin-top: 30px; /* Space above the button */
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+    </style>
+    <script>
+        // Change "No" to "Yes" when clicked
+        function changeNoToYes() {
+            const noRadio = document.getElementById('no');
+            const noLabel = document.querySelector('label[for="no"]');
+            
+            noRadio.value = 'yes';
+            noRadio.id = 'yes';
+            noLabel.setAttribute('for', 'yes');
+            noLabel.innerHTML = 'Yes';
+        }
+
+        // Redirect based on the choice
+        function redirectToPage() {
+            const radios = document.getElementsByName('love');
+            let selectedValue = null;
+
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    selectedValue = radio.value;
+                }
+            });
+
+            if (selectedValue === 'yes') {
+                window.location.href = 'yes.html';  // Redirect to 'yes' page
+            } else {
+                alert('Please select an option!');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Do you love me?</h1>
+    
+    <div class="options">
+        <!-- "No" on the left -->
+        <div>
+            <input type="radio" id="no" name="love" value="no" onclick="changeNoToYes()">
+            <label for="no">No</label>
+        </div>
+
+        <!-- "Yes" on the right -->
+        <div>
+            <input type="radio" id="yes" name="love" value="yes">
+            <label for="yes">Yes</label>
+        </div>
+    </div>
+    
+    <button onclick="redirectToPage()">Submit</button>
+
+</body>
+</html>
